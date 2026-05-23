@@ -24,7 +24,7 @@ const experiences = [
     company: "180 DEGREES CONSULTING, VIPS",
     role: "Core Member — R&D Tech Team",
     period: "2025 — Present",
-    location: "New Delhi, India",
+    location: "Gurgaon, India",
     tag: "TECH TEAM",
     bullets: [
       "Built the full website for VIPS's 180 Degrees Consulting chapter.",
@@ -115,7 +115,7 @@ export default function Experience() {
             <div className="font-display font-bold text-paper text-xl leading-tight">
               VIVEKANANDA INSTITUTE OF PROFESSIONAL STUDIES
             </div>
-            <div className="text-paper-muted text-sm mt-1">New Delhi, India</div>
+            <div className="text-paper-muted text-sm mt-1">Gurgaon, India</div>
           </div>
           <div className="lg:col-span-2 flex items-start justify-between">
             <div>

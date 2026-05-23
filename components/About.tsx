@@ -43,7 +43,7 @@ export default function About() {
               className="text-paper text-xl lg:text-2xl font-light leading-relaxed mb-6"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Sophomore studying AI & ML at VIPS, New Delhi. Founding engineering member at Himitsu Lab — building SOMA Engine.
+              Sophomore studying AI & ML at VIPS, Gurgaon. Founding engineering member at Himitsu Lab — building SOMA Engine.
             </motion.p>
 
             <motion.p

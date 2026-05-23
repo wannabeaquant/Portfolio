@@ -6,7 +6,7 @@ import { motion, useInView } from "framer-motion";
 const links = [
   { label: "EMAIL", value: "atharvasingh0405@gmail.com", href: "mailto:atharvasingh0405@gmail.com" },
   { label: "GITHUB", value: "github.com/wannabeaquant", href: "https://github.com/wannabeaquant" },
-  { label: "LINKEDIN", value: "linkedin.com/in/atharva-singh", href: "https://linkedin.com/in/atharva-singh" },
+  { label: "LINKEDIN", value: "linkedin.com/in/atharva-singh-", href: "https://www.linkedin.com/in/atharva-singh-/" },
 ];
 
 export default function Contact() {
@@ -102,7 +102,7 @@ export default function Contact() {
           className="mt-24 pt-8 border-t border-rule flex flex-wrap items-center justify-between gap-4"
         >
           <div className="label">© 2026 ATHARVA SINGH</div>
-          <div className="label">NEW DELHI, INDIA · WANNABEAQUANT</div>
+          <div className="label">GURGAON, INDIA · WANNABEAQUANT</div>
           <div className="label">BUILT WITH NEXT.JS · FRAMER MOTION</div>
         </motion.div>
       </div>

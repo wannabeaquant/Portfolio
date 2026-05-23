@@ -101,7 +101,7 @@ export default function Hero() {
               <div className="w-px h-8 bg-rule" />
               <div>
                 <div className="label mb-1">BASED IN</div>
-                <div className="vt text-paper-muted">NEW DELHI, IN</div>
+                <div className="vt text-paper-muted">GURGAON, IN</div>
               </div>
               <div className="w-px h-8 bg-rule" />
               <div>
