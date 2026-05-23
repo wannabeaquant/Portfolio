@@ -4,121 +4,116 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const stats = [
-  { value: "8.69", label: "CGPA", sub: "B.Tech AI/ML" },
-  { value: "40%", label: "Latency Cut", sub: "@ Himitsu Lab" },
-  { value: "1500+", label: "Teams Beat", sub: "Codex 2.0, 1st" },
-  { value: "5+", label: "Finals", sub: "National Hackathons" },
-];
-
-const lines = [
-  "Sophomore studying AI & ML at VIPS, New Delhi.",
-  "Founding engineering member at Himitsu Lab (Yokohama, Japan) — building SOMA Engine:",
-  "production multi-agent systems with LLM workflows, RAG, persistent memory, tool orchestration.",
-  "I build systems that think, reason, and act — not just demo.",
+  { value: "8.69", label: "CGPA", sub: "B.TECH AI/ML · VIPS" },
+  { value: "−40%", label: "LATENCY", sub: "SERVING TIME @ HIMITSU" },
+  { value: "1500+", label: "TEAMS", sub: "CODEX 2.0 — 1ST PLACE" },
+  { value: "5+", label: "FINALS", sub: "NATIONAL HACKATHONS" },
 ];
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="about" ref={ref} className="py-32 px-8 lg:px-24 border-t border-border">
+    <section id="about" ref={ref} className="border-t border-rule px-8 lg:px-16 py-28">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="flex items-center gap-4 mb-20"
-        >
-          <span className="section-num">01 —</span>
-          <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight">About</h2>
-        </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-20">
-          {/* Left: text */}
+        {/* Header row */}
+        <div className="flex items-start justify-between mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="label mb-3">&ldquo;ABOUT&rdquo;</div>
+            <h2 className="section-title text-paper">WHO<br />I AM</h2>
+          </motion.div>
+          <div className="index-num hidden lg:block">02</div>
+        </div>
+
+        {/* Content grid */}
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+
+          {/* Left: bio */}
           <div>
-            <div className="space-y-0 mb-12">
-              {lines.map((line, i) => (
-                <motion.p
-                  key={i}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.1 * i + 0.2, duration: 0.5 }}
-                  className={`font-mono leading-relaxed ${
-                    i === 0
-                      ? "text-bright text-lg mb-3"
-                      : i === 1
-                      ? "text-ghost text-sm mt-4"
-                      : "text-ghost text-sm"
-                  }`}
-                >
-                  {line}
-                </motion.p>
-              ))}
-            </div>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              className="text-paper text-xl lg:text-2xl font-light leading-relaxed mb-6"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              Sophomore studying AI & ML at VIPS, New Delhi. Founding engineering member at Himitsu Lab — building SOMA Engine.
+            </motion.p>
 
-            {/* Terminal-style bio block */}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-paper-muted text-base font-light leading-relaxed mb-10"
+            >
+              Production multi-agent systems with LLM workflows, RAG pipelines, persistent memory, and tool orchestration. I build systems that reason and act reliably — not just demo.
+            </motion.p>
+
+            {/* Identity block */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
-              transition={{ delay: 0.7 }}
-              className="border border-border bg-ash p-6 font-mono text-xs"
+              transition={{ delay: 0.35 }}
+              className="border border-rule"
             >
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-2 h-2 rounded-full bg-red-500" />
-                <div className="w-2 h-2 rounded-full bg-yellow-500" />
-                <div className="w-2 h-2 rounded-full bg-accent" />
-                <span className="text-dim ml-2">~ whoami</span>
-              </div>
-              <div className="space-y-1 text-ghost">
-                <div><span className="text-accent">name</span>    → Atharva Singh</div>
-                <div><span className="text-accent">handle</span>  → wannabeaquant</div>
-                <div><span className="text-accent">role</span>    → Founding Engineer / AI Builder</div>
-                <div><span className="text-accent">location</span>→ New Delhi, India 🇮🇳</div>
-                <div><span className="text-accent">focus</span>   → Agentic AI, LLMs, Quant Systems</div>
-                <div><span className="text-accent">status</span>  → <span className="text-accent">open to opportunities</span></div>
-              </div>
+              {[
+                ["HANDLE", "wannabeaquant"],
+                ["FOCUS", "Agentic AI · LLMs · Quant Systems"],
+                ["EMPLOYER", "Himitsu Lab Limited — Yokohama, Japan"],
+                ["STATUS", "Open to opportunities"],
+              ].map(([key, val], i) => (
+                <div
+                  key={key}
+                  className={`flex items-start gap-6 px-5 py-3 ${i < 3 ? "border-b border-rule" : ""}`}
+                >
+                  <span className="label w-20 shrink-0 pt-0.5">{key}</span>
+                  <span className="text-paper-dim text-sm font-mono">{val}</span>
+                </div>
+              ))}
             </motion.div>
           </div>
 
           {/* Right: stats */}
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-px bg-rule">
             {stats.map((s, i) => (
               <motion.div
                 key={s.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: 0.15 * i + 0.4, duration: 0.4 }}
-                className="border border-border p-6 hover:border-accent transition-colors duration-300 group"
+                initial={{ opacity: 0 }}
+                animate={inView ? { opacity: 1 } : {}}
+                transition={{ delay: 0.1 * i + 0.3 }}
+                className="bg-ink p-7 flex flex-col justify-between group hover:bg-ink-soft transition-colors duration-200"
                 data-hover
               >
-                <div className="text-4xl font-bold text-accent group-hover:text-glow transition-all mb-2 font-mono">
+                <div className="font-display font-extrabold text-5xl text-paper leading-none tracking-tight mb-4">
                   {s.value}
                 </div>
-                <div className="text-bright text-sm font-bold tracking-wide mb-1">{s.label}</div>
-                <div className="text-dim text-xs font-mono">{s.sub}</div>
+                <div>
+                  <div className="vt text-paper mb-1">{s.label}</div>
+                  <div className="label">{s.sub}</div>
+                </div>
               </motion.div>
             ))}
 
-            {/* Patent / INSPIRE */}
+            {/* INSPIRE span */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.7, duration: 0.4 }}
-              className="col-span-2 border border-accent/30 bg-accent/5 p-6 hover:bg-accent/10 transition-all duration-300 group"
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.55 }}
+              className="col-span-2 bg-ink border-t border-rule p-7"
               data-hover
             >
-              <div className="flex items-start gap-4">
-                <div className="text-accent text-2xl">◈</div>
-                <div>
-                  <div className="text-accent text-sm font-bold tracking-widest mb-1 uppercase">
-                    INSPIRE MANAK Awardee
-                  </div>
-                  <div className="text-ghost text-xs font-mono">
-                    Recognized by Dept of Science & Technology, Government of India. Co-Inventor on an Indian Patent filed.
-                  </div>
-                </div>
+              <div className="label mb-2">&ldquo;GOVERNMENT RECOGNITION&rdquo;</div>
+              <div className="font-display font-bold text-paper text-xl mb-1">
+                INSPIRE MANAK AWARDEE
+              </div>
+              <div className="text-paper-muted text-sm font-light">
+                Dept of Science & Technology, Government of India · Co-Inventor, Indian Patent Filed
               </div>
             </motion.div>
           </div>
